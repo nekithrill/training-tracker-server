@@ -1,0 +1,11 @@
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - '${SERVER_PORT}:${SERVER_PORT}'
+    volumes:
+      - ./server/src:/server/src
+    environment:
+      - NODE_ENV=development
